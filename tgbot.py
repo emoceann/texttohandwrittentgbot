@@ -1,5 +1,4 @@
 from pywhatkit import text_to_handwriting
-from pywhatkit import image_to_ascii_art
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
@@ -18,7 +17,7 @@ dp = Dispatcher(bot)
 async def ascii_art_func(message : types.Message):
     user_id = message.from_user.id
     text_to_handwriting(message.text)
-    await bot.send_photo(user_id, photo=open('pywhatkit.png', 'r'))
+    await bot.send_photo(user_id, photo=open('pywhatkit.png', 'rb'))
     
     
     
